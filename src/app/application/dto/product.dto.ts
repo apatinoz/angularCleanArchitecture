@@ -1,8 +1,8 @@
 export interface ProductDto{
     name: string;
-    count: string;
+    count: number;
     serial: string;
-    purchasePrice: string;
+    purchasePrice: number;
     category: string;
     subcategory: string;
 }

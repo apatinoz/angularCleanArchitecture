@@ -1,9 +1,21 @@
 <div class="row">
-    <div class="column-center">
-      <button class="button-outline" (click)="updateElephants()">Load Elephant Birthday Calendar</button>
+  <div class="col-2 bg-secondary"></div>
+  <div class="col">
+    <div class="row justify-content-center bg-light" (click)="onSelect($event)">
+      <div class="col-4 card bg-light" *ngFor="let warehouse of warehouses">
+        <div class="card-body">
+          <h5 class="card-title">{{warehouse.name}}</h5>
+          <p class="card-text">
+            {{warehouse.note}}
+          </p>
+          <button type="button" class="btn btn-primary">Button</button>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="row">
+  <div class="col-2 bg-secondary"></div>
+</div>
+<!--div class="row">
     <div class="column">
       <table>
         <thead>
@@ -22,4 +34,4 @@
         </tbody>
       </table>
     </div>
-  </div>
+  </div-->

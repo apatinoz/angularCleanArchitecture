@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { WarehouseDto } from 'src/app/application/dto/warehouse.dto';
 import { WarehouseRepository } from 'src/app/infraestructure/data/repository/warehouse.repository';
 import { Product } from '../entity/product.entity';
+import { Section } from '../entity/section.entity';
 import { Warehouse } from '../entity/warehouse.entity';
 
 // Se inyecta el repo en el servicio
@@ -25,8 +26,12 @@ export class WarehouseService {
     return this.warehouseRepository.build(warehouseDto, id);
   }
 
-  async getAllProducts(warehouse: WarehouseDto):Promise<Product[]>{
+  getAllProducts(warehouse: WarehouseDto):Product[]{
       return this.warehouseRepository.getAllProducts(warehouse);
   }
+
+  getAllSections(warehouse: WarehouseDto):Section[]{
+    return this.warehouseRepository.getAllSections(warehouse);
+}
 
 }

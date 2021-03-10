@@ -1,6 +1,7 @@
 import { ProductDto } from "src/app/application/dto/product.dto";
 import * as faker from 'faker';
-import { IsNotEmpty, IsNumber, IsString } from "class-validator";
+import { IsNotEmpty, IsNumber, IsString, ValidateBy } from "class-validator";
+import { Validators } from "@angular/forms";
 
 export class ProductModel {
     _id?: string;
@@ -11,7 +12,7 @@ export class ProductModel {
 
     @IsNumber()
     @IsNotEmpty()
-    count: string;
+    count: number;
 
     @IsString()
     @IsNotEmpty()
@@ -19,7 +20,7 @@ export class ProductModel {
 
     @IsNumber()
     @IsNotEmpty()
-    purchasePrice: string;
+    purchasePrice: number;
 
     @IsString()
     @IsNotEmpty()

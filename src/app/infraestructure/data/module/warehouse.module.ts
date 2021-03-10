@@ -1,4 +1,5 @@
-import {IsArray, IsNotEmpty, IsNumber, IsString} from 'class-validator';
+import {IsArray, IsNotEmpty, IsString} from 'class-validator';
+import * as faker from 'faker';
 import { WarehouseDto } from 'src/app/application/dto/warehouse.dto';
 import { Section } from 'src/app/domain/entity/section.entity';
 
@@ -19,6 +20,7 @@ export class WarehouseModel {
   sections: Array<Section>
 
   constructor(warehouse: WarehouseDto, id:string) {
+    this._id = (id)? id: faker.random.uuid();
     this.name = warehouse.name;
     this.note = warehouse.note;
     this.sections = warehouse.sections;
@@ -28,4 +30,5 @@ export class WarehouseModel {
   save(): WarehouseModel{
     return this;
   } 
+  
 }

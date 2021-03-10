@@ -23,11 +23,11 @@ export class WarehouseRepository {
     return createdWarehouse;
   }
 
-  async getAllSections(warehouse: WarehouseDto): Promise<Section[]>{
+   getAllSections(warehouse: WarehouseDto): Section[]{
     return warehouse.sections;
   }
 
-  async getAllProducts(warehouse: WarehouseDto):Promise<Product[]>{
+   getAllProducts(warehouse: WarehouseDto):Product[]{
     let products:[] = [];
     let sections = warehouse.sections;
     sections.forEach(section=>console.log(section.products));

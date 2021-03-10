@@ -1,4 +1,5 @@
 import {IsArray, IsNotEmpty, IsNumber, IsString} from 'class-validator';
+import * as faker from 'faker';
 import { SectionDto } from 'src/app/application/dto/section.dto';
 import { Product } from 'src/app/domain/entity/product.entity';
 
@@ -27,6 +28,7 @@ export class SectionModel {
   products: Array<Product>
 
   constructor(section: SectionDto, id:string) {
+    this._id = (id)? id: faker.random.uuid();
     this.name = section.name;
     this.location = section.location;
     this.tag = section.tag;
