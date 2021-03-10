@@ -1,1 +1,25 @@
-<p>elephant works!</p>
+<div class="row">
+    <div class="column-center">
+      <button class="button-outline" (click)="updateElephants()">Load Elephant Birthday Calendar</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column">
+      <table>
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Family</th>
+          <th>Birthday</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let warehouse of warehouses" (click)="onSelect($event)">
+          <td>{{warehouse.name}}</td>
+          <td>{{warehouse.note}}</td>
+          <td>{{warehouse.sections }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
